@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<KORS.Metadata serializer="4.1.4.267" created="04.12.2020 01:00:44">
+    <ReaderParameters version="4.1" class="RawPCM">
+        <FrontOffset>0</FrontOffset>
+        <BackOffset>0</BackOffset>
+        <Data class="SpatialSamples" version="4.1">
+            <SampleType>int8iq</SampleType>
+            <SampleRate>AAAAAICEPkE=</SampleRate>
+            <AdcBits>8</AdcBits>
+            <Baseband Begin="AAAAAICELsE=" End="AAAAAICELkE="/>
+            <Passband Begin="AAAAAICELsE=" End="AAAAAICELkE="/>
+            <TimeStamp>wPqVwQ0HKgk=</TimeStamp>
+        </Data>
+    </ReaderParameters>
+    <TimeGrids version="4.1"/>
+    <Spectrogram version="4.0">
+        <Domain>1</Domain>
+        <Fft>16384</Fft>
+        <Overlap>0</Overlap>
+        <Window>Блэкмана (оптим.)</Window>
+        <SparseFlag>1</SparseFlag>
+        <BinSpan Begin="0" End="16383"/>
+        <SampleSpan Begin="0" End="42860543"/>
+        <ComplexMode>2</ComplexMode>
+        <Elements>
+            <OscPlotGrid>1</OscPlotGrid>
+            <SpecPlotGrid>1</SpecPlotGrid>
+            <SonoPlotGrid>1</SonoPlotGrid>
+        </Elements>
+    </Spectrogram>
+</KORS.Metadata>
