@@ -13,10 +13,12 @@ void MainWindow::openTuner()
     }
     if (ui->cb_device->currentText().isEmpty())
     {
+        qDebug()<<"Не удалось подключиться. Лист устройств пуст";
         show_StB_msg("Ошибка! Не удалось подключиться к устройству.");
         TCPclient.sendToServer("Ошибка! Проверьте подключение приемника!", 3);
         return;
     }
+    qDebug()<<"Подключение к SDR...";
     QString str = ui->cb_device->currentText();
     QString driver = "driver+"+str;
     if (str == "hackrf")
@@ -28,10 +30,16 @@ void MainWindow::openTuner()
         connect(&hackrfSetWin, SIGNAL(sampleRate_changed(double)), this, SLOT(setSampleRate(double)));
     }
 
+    if (str == "uhd")
+    {
+        str.append(", type=b200");
+    }
+
     //make device
     SoapySDR::Device *sdr = SoapySDR::Device::make(driver.toStdString());
     if(sdr == NULL)
     {
+        qDebug()<<"Ошибка! Не удалось подключиться к устройству.";
         show_StB_msg("Ошибка! Не удалось подключиться к устройству.");
         TCPclient.sendToServer("Ошибка! Проверьте подключение приемника!", 3);
         return;
@@ -39,6 +47,19 @@ void MainWindow::openTuner()
     tuner_state->device = sdr;
     tuner_state->isOpen = true;
     hackrfSetWin.setEnabled(true);
+
+
+    vector<string> str_list;
+    //	2.2 Усиления
+    str_list = tuner_state->device->listGains(SOAPY_SDR_RX, 0);
+    for(int i = 0; i < str_list.size(); ++i)
+        qDebug()<<QString::fromStdString(str_list[i]);
+
+    for(int i=0; i< str_list.size(); i++)
+    {
+        SoapySDR::Range range = tuner_state->device->getGainRange(SOAPY_SDR_RX, 0, str_list[i]);
+        qDebug()<<range.minimum()<<" "<<range.maximum()<<" "<<range.step();
+    }
 
     show_StB_msg("Приемник подключен!", 1000);
     TCPclient.sendToServer("Приемник подключен!", 3);
@@ -135,12 +156,15 @@ void MainWindow::init_sdr()
     // 0. enumerate devices (list all devices' information)
     SoapySDR::KwargsList results = SoapySDR::Device::enumerate();
     SoapySDR::Kwargs::iterator it;
+    qDebug()<<results.size();
     for( int i = 0; i < results.size(); ++i)
     {
-        it = results[i].begin();
-        it++;
-        if(QString::fromStdString(it->first) == "driver")
-            ui->cb_device->addItem(QString::fromStdString(it->second));
+        for(it = results[i].begin(); it != results[i].end(); ++it)
+        {
+            qDebug()<<QString::fromStdString(it->first)<<" "<<QString::fromStdString(it->second);
+            if(QString::fromStdString(it->first) == "driver")
+                ui->cb_device->addItem(QString::fromStdString(it->second));
+        }
     }
 }
 
@@ -177,8 +201,8 @@ int MainWindow::setFreq(double val)
 {
     if (tuner_state->isOpen)
     {
-        tuner_state->device->setFrequency(SOAPY_SDR_RX, 1, val);
-        double sdr_val = tuner_state->device->getFrequency(SOAPY_SDR_RX, 1);
+        tuner_state->device->setFrequency(SOAPY_SDR_RX, 0, val);
+        double sdr_val = tuner_state->device->getFrequency(SOAPY_SDR_RX, 0);
         if (val != sdr_val)
             return OTHER_ERROR;
         tuner_state->centFreq = val;
