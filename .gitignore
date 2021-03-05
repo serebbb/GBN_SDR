@@ -1,4 +1,4 @@
-release/
+release/*
 Makefile
 Makefile.Debug
 Makefile.Release
