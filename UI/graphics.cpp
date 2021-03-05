@@ -48,38 +48,35 @@ void MainWindow::showSpecData(float *xData, float *yData, int size, int garmonic
 
 void MainWindow::create_plot()
 {
-    qDebug()<<"(create_plot())";
-    spectrogram = new QwtPlotSpectrogram();
-    spectrogram->testDisplayMode(QwtPlotSpectrogram::ImageMode);
-    spectrogram->show();
+
     //ui->layout_graph->addWidget(spectrogram);
-    //    ui->widAmlSpecTop->plot->installPlot(false);
-    //    ui->widAmlSpecTop->setMeasurePanelVisible(false);
-    //    ui->widAmlSpecTop->setDataTimeEditsVisible(false);
+//    ui->widAmlSpecTop->plot->installPlot(false);
+//    ui->widAmlSpecTop->setMeasurePanelVisible(false);
+//    ui->widAmlSpecTop->setDataTimeEditsVisible(false);
 
-    //    ui->widSonogramBottom->plot->installPlot(true);
-    //    ui->widSonogramBottom->setMeasurePanelVisible(false);
-    //    ui->widSonogramBottom->setDataTimeEditsVisible(false);
+//    ui->widSonogramBottom->plot->installPlot(true);
+//    ui->widSonogramBottom->setMeasurePanelVisible(false);
+//    ui->widSonogramBottom->setDataTimeEditsVisible(false);
 
-    //    QFont font;
-    //    font.setPointSize(9);
-    //    QwtText text;
-    //    text.setFont(font);  // font with desired size, etc.
+//    QFont font;
+//    font.setPointSize(9);
+//    QwtText text;
+//    text.setFont(font);  // font with desired size, etc.
 
-    //    text.setText("дБ В/Гц");
-    //    ui->widAmlSpecTop->plot->setAxisTitle(QwtPlot::yLeft, text);
-    //    text.setText("Частота, МГц");
-    //    ui->widAmlSpecTop->plot->setAxisTitle(QwtPlot::xBottom, text);
+//    text.setText("дБ В/Гц");
+//    ui->widAmlSpecTop->plot->setAxisTitle(QwtPlot::yLeft, text);
+//    text.setText("Частота, МГц");
+//    ui->widAmlSpecTop->plot->setAxisTitle(QwtPlot::xBottom, text);
 
-    //    text.setText("Время, с");
-    //    ui->widSonogramBottom->plot->setAxisTitle(QwtPlot::yLeft, text);
-    //    text.setText("Частота, МГц");
-    //    ui->widSonogramBottom->plot->setAxisTitle(QwtPlot::xBottom, text);
+//    text.setText("Время, с");
+//    ui->widSonogramBottom->plot->setAxisTitle(QwtPlot::yLeft, text);
+//    text.setText("Частота, МГц");
+//    ui->widSonogramBottom->plot->setAxisTitle(QwtPlot::xBottom, text);
 
-    //    text.setText("Панорамный амплитудный спектр");
-    //    ui->widAmlSpecTop->plot->setTitle(text);
-    //    text.setText("Спектрограмма");
-    //    ui->widSonogramBottom->plot->setTitle(text);
+//    text.setText("Панорамный амплитудный спектр");
+//    ui->widAmlSpecTop->plot->setTitle(text);
+//    text.setText("Спектрограмма");
+//    ui->widSonogramBottom->plot->setTitle(text);
 
-    //    ui->widSonogramBottom->plot->specData->matrix.resize(sonoWindow);
+//    ui->widSonogramBottom->plot->specData->matrix.resize(sonoWindow);
 }

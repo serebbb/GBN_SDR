@@ -30,6 +30,7 @@
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
+#include "mTaPlot/mTaPlot.h"
 
 QT_BEGIN_NAMESPACE
 
@@ -65,7 +66,8 @@ public:
     QScrollArea *scrollArea_2;
     QWidget *scrollAreaWidgetContents_2;
     QVBoxLayout *verticalLayout_6;
-    QVBoxLayout *layout_graph;
+    TaPlot *widAmlSpecTop;
+    TaPlot *widSonogramBottom;
     QGroupBox *gb_spec_param;
     QGridLayout *gridLayout;
     QComboBox *cb_fftsize;
@@ -245,11 +247,15 @@ public:
         verticalLayout_6->setContentsMargins(11, 11, 11, 11);
         verticalLayout_6->setObjectName(QString::fromUtf8("verticalLayout_6"));
         verticalLayout_6->setContentsMargins(4, 2, 4, 2);
-        layout_graph = new QVBoxLayout();
-        layout_graph->setSpacing(6);
-        layout_graph->setObjectName(QString::fromUtf8("layout_graph"));
+        widAmlSpecTop = new TaPlot(scrollAreaWidgetContents_2);
+        widAmlSpecTop->setObjectName(QString::fromUtf8("widAmlSpecTop"));
 
-        verticalLayout_6->addLayout(layout_graph);
+        verticalLayout_6->addWidget(widAmlSpecTop);
+
+        widSonogramBottom = new TaPlot(scrollAreaWidgetContents_2);
+        widSonogramBottom->setObjectName(QString::fromUtf8("widSonogramBottom"));
+
+        verticalLayout_6->addWidget(widSonogramBottom);
 
         gb_spec_param = new QGroupBox(scrollAreaWidgetContents_2);
         gb_spec_param->setObjectName(QString::fromUtf8("gb_spec_param"));

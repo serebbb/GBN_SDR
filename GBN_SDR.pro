@@ -35,6 +35,12 @@ SOURCES += \
     UI/hackrf_controller.cpp \
     UI/spinWidget.cpp \
     Ui/graphics.cpp \
+    mTaPlot/mTaPlot.cpp \
+    mTaPlot/mplot.cpp \
+    mTaPlot/qaxiszoomsvc.cpp \
+    mTaPlot/qwheelzoomsvc.cpp \
+    mTaPlot/qwtchartzoom.cpp \
+    mTaPlot/selwidget.cpp \
     main.cpp \
     mainwindow.cpp \
     network.cpp \
@@ -53,6 +59,12 @@ SOURCES += \
 HEADERS += \
     UI/hackrf_controller.h \
     UI/spinWidget.h \
+    mTaPlot/mTaPlot.h \
+    mTaPlot/mplot.h \
+    mTaPlot/qaxiszoomsvc.h \
+    mTaPlot/qwheelzoomsvc.h \
+    mTaPlot/qwtchartzoom.h \
+    mTaPlot/selwidget.h \
     mainwindow.h \
     proc_thread.h \
     mysettings.h \

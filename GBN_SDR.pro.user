@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 4.13.3, 2021-03-05T21:17:20. -->
+<!-- Written by QtCreator 4.13.3, 2021-03-05T21:52:24. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -146,9 +146,9 @@
     <value type="int" key="SeparateDebugInfo">2</value>
    </valuemap>
    <valuemap type="QVariantMap" key="ProjectExplorer.Target.BuildConfiguration.1">
-    <value type="bool">true</value>
+    <value type="bool">false</value>
     <value type="int" key="EnableQmlDebugging">2</value>
-    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Projects\Qt\Build\Build_GBN_SDR_MSVC\release</value>
+    <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">C:\Projects\Qt\GBN_SDR</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory.shadowDir">C:/Projects/Qt/Build/Build_GBN_SDR_MSVC/release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">

@@ -269,7 +269,7 @@
          <height>580</height>
         </rect>
        </property>
-       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0">
+       <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,0">
         <property name="spacing">
          <number>4</number>
         </property>
@@ -286,7 +286,10 @@
          <number>2</number>
         </property>
         <item>
-         <layout class="QVBoxLayout" name="layout_graph"/>
+         <widget class="TaPlot" name="widAmlSpecTop" native="true"/>
+        </item>
+        <item>
+         <widget class="TaPlot" name="widSonogramBottom" native="true"/>
         </item>
         <item>
          <widget class="QGroupBox" name="gb_spec_param">
@@ -570,6 +573,14 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>TaPlot</class>
+   <extends>QWidget</extends>
+   <header>mTaPlot/mTaPlot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
