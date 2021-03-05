@@ -83,12 +83,12 @@ if (!debug_and_release|build_pass):CONFIG(debug, debug|release) {
 
 # Подключение библиотек
 INCLUDEPATH += $$PWD\qwt_win
-INCLUDEPATH += $$PWD\libhackrf
+#INCLUDEPATH += $$PWD\libhackrf
 INCLUDEPATH += $$PWD\SoapySDR
 INCLUDEPATH += $$PWD\fftw3
 
 LIBS += -L$$PWD\bin\lib -lqwt
-LIBS += -L$$PWD\bin\lib -lhackrf
+#LIBS += -L$$PWD\bin\lib -lhackrf
 LIBS += -L$$PWD\bin\lib -lSoapySDR
 LIBS += -L$$PWD\bin\lib -llibfftw3-3
 LIBS += -L$$PWD\bin\lib -llibfftw3f-3
